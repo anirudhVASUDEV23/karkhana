@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   Flex,
@@ -9,13 +9,13 @@ import {
   Container,
   useToast,
   ButtonGroup,
-} from '@chakra-ui/react';
-import { LogOut, BarChart2, Home } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { logout } from '../../store/slices/authSlice';
-import { clearItems } from '../../store/slices/itemsSlice';
-import { clearOtherCosts } from '../../store/slices/otherCostsSlice';
+} from "@chakra-ui/react";
+import { LogOut, BarChart2, Home } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { logout } from "../../store/slices/authSlice";
+import { clearItems } from "../../store/slices/itemsSlice";
+import { clearOtherCosts } from "../../store/slices/otherCostsSlice";
 
 const Navbar: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -23,24 +23,24 @@ const Navbar: React.FC = () => {
   const location = useLocation();
   const { user } = useAppSelector((state) => state.auth);
   const toast = useToast();
-  
+
   const handleLogout = async () => {
     try {
       await dispatch(logout()).unwrap();
       dispatch(clearItems());
       dispatch(clearOtherCosts());
       toast({
-        title: 'Success',
-        description: 'Logged out successfully',
-        status: 'success',
+        title: "Success",
+        description: "Logged out successfully",
+        status: "success",
         duration: 3000,
         isClosable: true,
       });
     } catch (error) {
       toast({
-        title: 'Error',
-        description: 'Failed to log out',
-        status: 'error',
+        title: "Error",
+        description: "Failed to log out",
+        status: "error",
         duration: 3000,
         isClosable: true,
       });
@@ -65,8 +65,8 @@ const Navbar: React.FC = () => {
             cursor="pointer"
             onClick={() => navigate("/")}
           >
-            Cost Tracker
-            </Heading>
+            BudgetFlow
+          </Heading>
 
           <Spacer />
 

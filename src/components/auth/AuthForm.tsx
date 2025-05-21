@@ -6,7 +6,7 @@ import {
   Flex,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useAppSelector } from "../../store/hooks";
+
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 
